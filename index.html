@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Lunaris Wear</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#f5f0ea;
+      color:#2f221d;
+    
+	scroll-behavior:smooth;
+	}
+	
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+	a{
+	cursor:pointer;
+	}
+
+    /* ================= NAVBAR ================= */
+
+	nav{
+	  width:100%;
+	  display:flex;
+	  justify-content:space-between;
+	  align-items:center;
+	  padding:28px 80px;
+
+	  background:rgba(245,240,234,0.85);
+	  backdrop-filter:blur(10px);
+
+	  position:fixed;
+	  top:0;
+
+	  z-index:99999;
+	}
+
+    .logo{
+      font-size:38px;
+      font-family:'Cormorant Garamond',serif;
+      font-weight:700;
+      letter-spacing:1px;
+    }
+
+	.menu{
+	  display:flex;
+	  align-items:center;
+	  gap:40px;
+	  list-style:none;
+      font-size:15px;
+      color:#5b463d;
+    }
+	
+	.menu a{
+	  transition:0.3s;
+	}
+
+	.menu a:hover{
+	  color:#2f221d;
+	}
+
+    /* ================= HERO ================= */
+
+    .hero{
+      width:100%;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:120px 80px 60px;
+      background:#d8cfc4;
+    }
+
+    .hero-text{
+      width:45%;
+    }
+
+    .hero-text h1{
+      font-size:86px;
+      line-height:0.95;
+      font-family:'Cormorant Garamond',serif;
+      margin-bottom:25px;
+      color:#2f221d;
+    }
+
+    .hero-text p{
+      font-size:17px;
+      line-height:1.8;
+      color:#5b463d;
+      max-width:500px;
+      margin-bottom:35px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:18px;
+    }
+
+    .btn-dark{
+      padding:14px 32px;
+      background:#3b2a24;
+      color:white;
+      border:none;
+      cursor:pointer;
+      font-size:14px;
+      letter-spacing:1px;
+      transition:0.3s;
+    }
+
+    .btn-dark:hover{
+      background:#241915;
+    }
+
+    .btn-light{
+      padding:14px 32px;
+      border:1px solid #3b2a24;
+      background:transparent;
+      color:#3b2a24;
+      cursor:pointer;
+      font-size:14px;
+      letter-spacing:1px;
+      transition:0.3s;
+    }
+
+    .btn-light:hover{
+      background:#3b2a24;
+      color:white;
+    }
+
+    .hero-image{
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:cover;
+      justify-content:cover;
+    }
+
+    .hero-image img{
+      width:100%;
+      height:85%;
+      object-fit:cover;
+      border-radius:6px;
+    }
+
+    /* ================= COLLECTION ================= */
+
+    .collection{
+      padding:100px 80px;
+      background:#f5f0ea;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:60px;
+      font-family:'Cormorant Garamond',serif;
+      margin-bottom:10px;
+      color:#2f221d;
+    }
+
+    .section-title p{
+      color:#6f5b52;
+      font-size:15px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:28px;
+    }
+
+    .card{
+      background:white;
+      overflow:hidden;
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card img{
+      width:100%;
+      height:430px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:22px;
+    }
+
+    .card-content h3{
+      font-family:'Cormorant Garamond',serif;
+      font-size:30px;
+      margin-bottom:8px;
+    }
+
+    .card-content p{
+      color:#6f5b52;
+      font-size:14px;
+      margin-bottom:12px;
+    }
+
+    .price{
+      font-weight:600;
+      color:#3b2a24;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about{
+      padding:120px 80px;
+      background:#e7ddd3;
+      text-align:center;
+    }
+
+    .about h2{
+      font-size:60px;
+      font-family:'Cormorant Garamond',serif;
+      margin-bottom:25px;
+    }
+
+    .about p{
+      max-width:780px;
+      margin:auto;
+      line-height:2;
+      color:#5b463d;
+      font-size:16px;
+    }
+	
+	/* ================= CONTACT ================= */
+
+	.contact{
+	  padding:120px 80px;
+	  background:#f5f0ea;
+	}
+
+	.contact-box{
+	  display:grid;
+	  grid-template-columns:repeat(3,1fr);
+	  gap:30px;
+	  margin-top:50px;
+	}
+
+	.contact-item{
+	  background:white;
+	  padding:40px;
+	  text-align:center;
+	  border-radius:10px;
+
+	  transition:0.3s;
+	}
+
+	.contact-item:hover{
+	  transform:translateY(-8px);
+	}
+
+	.contact-item h3{
+	  font-size:28px;
+	  margin-bottom:10px;
+	  font-family:'Cormorant Garamond',serif;
+	}
+
+	.contact-item p{
+	  color:#6f5b52;
+	}
+
+	@media(max-width:800px){
+
+	  .contact-box{
+		grid-template-columns:1fr;
+	  }
+
+	}
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      background:#2f221d;
+      color:white;
+      padding:60px 80px;
+    }
+
+    .footer-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .footer-logo{
+      font-size:42px;
+      font-family:'Cormorant Garamond',serif;
+    }
+
+    .footer-menu{
+      display:flex;
+      gap:30px;
+      color:#d5c6bb;
+      font-size:14px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:1100px){
+
+      .hero{
+        flex-direction:column;
+        height:auto;
+        gap:50px;
+      }
+
+      .hero-text{
+        width:100%;
+        text-align:center;
+      }
+
+      .hero-text p{
+        margin:auto auto 35px;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero-image{
+        width:100%;
+      }
+
+      .grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+    }
+
+    @media(max-width:700px){
+
+      nav{
+        padding:25px;
+      }
+
+      .menu{
+        display:none;
+      }
+
+      .hero{
+        padding:140px 25px 70px;
+      }
+
+      .hero-text h1{
+        font-size:56px;
+      }
+
+      .collection,
+      .about,
+      footer{
+        padding:80px 25px;
+      }
+
+      .section-title h2,
+      .about h2{
+        font-size:42px;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+
+	<nav class="navbar">
+
+	  <div class="logo">
+		Lunaris Wear
+	  </div>
+
+	  <ul class="menu">
+
+		<li><a href="#home">Home</a></li>
+		<li><a href="#collection">Collection</a></li>
+		<li><a href="#about">About</a></li>
+		<li><a href="#contact">Contact</a></li>
+
+	  </ul>
+
+	</nav>
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+
+      <h1>
+        Elevated <br>
+        Daily Fashion
+      </h1>
+
+      <p>
+        Lunaris Wear menghadirkan fashion wanita modern dengan nuansa elegan,
+        minimalis, dan timeless untuk menemani setiap harimu.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn-dark">SHOP NOW</button>
+        <button class="btn-light">EXPLORE</button>
+      </div>
+
+    </div>
+
+    <div class="hero-image">
+
+      <!-- FOTO HERO -->
+      <img src="JENNIE.jpg" alt="Hero Fashion">
+
+    </div>
+
+  </section>
+
+  <!-- ================= COLLECTION ================= -->
+
+  <section class="collection" id="collection">
+
+    <div class="section-title">
+
+      <h2>New Collection</h2>
+
+      <p>
+        Elegant pieces made for modern women
+      </p>
+
+    </div>
+
+    <div class="grid">
+
+      <!-- CARD 1 -->
+      <div class="card">
+
+        <img src="foto 1.jpeg" alt="Dress 1">
+
+        <div class="card-content">
+
+          <h3>Celestia Dress</h3>
+
+          <p>
+            Soft feminine silhouette with elegant details.
+          </p>
+
+          <div class="price">
+            Rp 329.000
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card">
+
+        <img src="foto 2.jpeg" alt="Dress 2">
+
+        <div class="card-content">
+
+          <h3>Ivory Muse</h3>
+
+          <p>
+            Minimalist premium dress for timeless moments.
+          </p>
+
+          <div class="price">
+            Rp 289.000
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="card">
+
+        <img src="foto 3.jpeg" alt="Dress 3">
+
+        <div class="card-content">
+
+          <h3>Mocha Aura</h3>
+
+          <p>
+            Luxury brown aesthetic with graceful texture.
+          </p>
+
+          <div class="price">
+            Rp 359.000
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="card">
+
+        <img src="foto 4.jpeg" alt="Dress 4">
+
+        <div class="card-content">
+
+          <h3>Lunaris Signature</h3>
+
+          <p>
+            Clean and classy essentials for everyday elegance.
+          </p>
+
+          <div class="price">
+            Rp 399.000
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+
+  <section class="about" id="about">
+
+    <h2>About Lunaris Wear</h2>
+
+    <p>
+      Lunaris Wear adalah brand fashion modern yang menggabungkan
+      keanggunan, minimalisme, dan sentuhan luxury aesthetic dalam setiap
+      koleksi. Kami percaya bahwa fashion bukan hanya tentang pakaian,
+      tetapi tentang bagaimana seseorang menampilkan dirinya dengan percaya diri.
+    </p>
+
+  </section>
+  
+  <!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+  <div class="section-title">
+
+    <h2>Contact Us</h2>
+
+    <p>
+      Reach us for collaborations and orders
+    </p>
+
+  </div>
+
+  <div class="contact-box">
+
+    <a href="https://instagram.com/lunariswear" target="_blank" class="contact-item">
+	  <h3>Instagram</h3>
+	  <p>@lunariswear</p>
+	</a>
+
+    <a href="mailto:lunariswear@gmail.com" class="contact-item">
+	  <h3>Email</h3>
+	  <p>lunariswear@gmail.com</p>
+	</a>
+
+    <a href="https://wa.me/6281234567890" target="_blank" class="contact-item">
+	  <h3>WhatsApp</h3>
+	  <p>+62 812 3456 7890</p>
+	</a>
+  </div>
+
+</section>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="footer-content">
+
+      <div class="footer-logo">
+        Lunaris Wear
+      </div>
+
+     <div class="menu">
+	  <a href="#home">Home</a>
+	  <a href="#collection">Collection</a>
+	  <a href="#about">About</a>
+	  <a href="#contact">Contact</a>
+	</div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
